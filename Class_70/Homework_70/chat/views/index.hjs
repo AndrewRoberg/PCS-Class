@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+
+    <hr/>
+    <div id="chatDiv">
+      <div id="messages"></div>
+      <form id="messageForm">
+        <input id="message"/>
+        <button>send</button>
+      </form>
+    </div>
+
+    <div id="login">
+      <form id="loginForm">
+        <label>Name: <input id="name"></label>
+        <button>Login</button>
+      </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/javascripts/index.js"></script>
+  </body>
+</html>

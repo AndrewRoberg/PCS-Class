@@ -1,0 +1,28 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#messages {
+  height: 200px;
+  border: 1px solid black;
+  margin-bottom: 6px;
+  overflow: auto;
+}
+
+#message {
+  width: 95%;
+}
+
+#login {
+  margin: auto;
+  height: 150px;
+  width: 500px;
+  background-color: lightslategrey;
+  text-align: center;
+  padding-top: 90px;
+}

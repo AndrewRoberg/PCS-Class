@@ -1,0 +1,60 @@
+C:\Users\Andrew>mongo
+MongoDB shell version v3.4.2
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.2
+Server has startup warnings:
+2017-03-06T12:30:16.053-0500 I CONTROL  [initandlisten]
+2017-03-06T12:30:16.053-0500 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-03-06T12:30:16.054-0500 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-03-06T12:30:16.056-0500 I CONTROL  [initandlisten]
+
+> use school
+switched to db school
+
+> db.students.insert([
+			{ firstName: 'Donald', lastName: 'Ronald', address: '2 square', grade: 9 }, 
+			{ firstName: 'Donald', lastName: 'Hill', address: '3 square', grade: 5 }, 
+			{firstName: 'Ned', lastName: 'Sled', address: '4 square', grade: 10 }, 
+			{ firstName: 'Tod', lastName: 'Clod', address: '5 square', grade: 11 }, 
+			{ firstName: 'Mo', lastName: 'Blow', address: '6 square', grade: 12 }
+		     ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 5,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+
+>db.students.find({ firstName: 'Donald' })
+
+>db.students.find({ firstName: 'Donald', grade: 5 })
+
+
+> use store
+switched to db store
+
+> db.products.insert([{ name: 'crockpot', price: 25 }, { name: 'blender', price: 30 }])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 2,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+
+> db.products.find()
+{ "_id" : ObjectId("58bda55043cab1d41d275d1e"), "name" : "crockpot", "price" : 25 }
+{ "_id" : ObjectId("58bda55043cab1d41d275d1f"), "name" : "blender", "price" : 30 }
+
+> db.products.remove({})
+WriteResult({ "nRemoved" : 2 })
+
+> db.products.count()
+0
